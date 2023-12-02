@@ -13,10 +13,17 @@ export const MainVideo = styled.video`
 `
 
 export const LeftContent = styled.div`
-  width: 60vw;
+  width: 65vw;
   margin: 20px 0 20px 20px;
   display: flex;
   flex-direction: column;
+`
+
+export const RightContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin: 20px 0 20px 16px;
 `
 
 export const InfoContainer = styled.div`
@@ -31,3 +38,14 @@ export const Info = styled.div`
   flex-direction: column;
   margin-left: 4px;
 `
+
+export const RecommendControlContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const RecommendContainer = styled.div`
+  display: flex;
+`
+
