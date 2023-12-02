@@ -53,9 +53,9 @@ export default function C2VText({ color, weight, size, type, text }) {
 
   return (
     <BaseText
-      size={property.size}
-      color={property.color}
-      weight={property.weight}
+      size={property.size ? property.size : size}
+      color={property.color ? property.color : color}
+      weight={property.weight ? property.weight : weight}
     >{text}</BaseText>
   )
 }

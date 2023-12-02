@@ -20,6 +20,7 @@ export const LeftContent = styled.div`
 `
 
 export const InfoContainer = styled.div`
+  margin-top: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,4 +29,5 @@ export const InfoContainer = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 4px;
 `

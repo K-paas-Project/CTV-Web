@@ -29,5 +29,5 @@ export const RightContent = styled.div`
 `
 
 export const LoginContainer = styled.div`
-  margin-right: 32px;
+  margin-right: 24px;
 `
