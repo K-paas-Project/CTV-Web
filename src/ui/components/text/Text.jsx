@@ -18,43 +18,37 @@ export default function C2VText({ color, weight, size, type, text }) {
     let color, weight, size;
     switch (type) {
       case 'title':
-        color = Color.black;
         weight = 700;
         size = 24;
         break;
       case 'headline':
-        color = Color.black;
         weight = 700;
         size = 20;
         break;
       case 'body':
-        color = Color.black;
         weight = 500;
         size = 16;
         break;
       case 'label':
-        color = Color.black;
         weight = 500;
         size = 14;
         break;
       case 'caption':
-        color = Color.black;
         weight = 500;
         size = 12;
         break;
       case 'mini':
-        color = Color.black;
         weight = 500;
         size = 10;
         break;
     }
-    return {color, weight, size};
+    return {weight, size};
   }
 
   return (
     <BaseText
       size={property.size ? property.size : size}
-      color={property.color ? property.color : color}
+      color={color}
       weight={property.weight ? property.weight : weight}
     >{text}</BaseText>
   )

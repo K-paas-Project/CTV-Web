@@ -11,12 +11,12 @@ export default function CTVButton({onClick, children, type}) {
       case 'blue':
         color = Color.primary;
         strokeColor = Color.primary;
-        shadowColor = Color.gray;
+        shadowColor = Color.primary2;
         break;
       case 'blueStroke':
         color = Color.white;
         strokeColor = Color.primary;
-        shadowColor = Color.gray;
+        shadowColor = Color.primary2;
         break;
       case 'red':
         color = Color.red;

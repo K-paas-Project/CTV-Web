@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Color from "../theme/color/Color";
 
 export const BaseButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
   background-color: ${props => props.color ? '#' + props.color : 'transparent'};
   border: 1px solid ${props => props.strokeColor ? '#' + props.strokeColor : 'transparent'};
