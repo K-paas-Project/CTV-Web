@@ -28,12 +28,6 @@ export const ModalBackdrop = styled.div`
 
 export const ModalView = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 100px;
+  z-index: 200;
   pointer-events: auto;
-  border-radius: 1rem;
-  background-color: white;
-  z-index: 999;
 `

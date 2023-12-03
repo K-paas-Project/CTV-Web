@@ -9,7 +9,9 @@ export default function CTVModal({ isOpen, setIsOpen, children }) {
           <ModalBackdrop
             onClick={() => setIsOpen(false)}
           />
-          {children}
+          <ModalView>
+            {children}
+          </ModalView>
         </ModalContainer>
         ) : null}
     </>
