@@ -13,11 +13,13 @@ export default function Nav() {
           <BurgerContainer>
             <CTVButton padding={'0'} onClick={() => console.log('se')}>
               <CTVIcon src={IcBurger}/>
+
             </CTVButton>
           </BurgerContainer>
           <HomeContainer>
             <CTVButton padding={'0'} onClick={() => console.log('to home')}>
               <CTVIcon src={IcLogo}/>
+              <C2VText text={'CTV'} type={'body'}/>
             </CTVButton>
           </HomeContainer>
         </LeftContent>
