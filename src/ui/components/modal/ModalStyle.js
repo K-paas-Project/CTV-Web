@@ -10,6 +10,7 @@ export const ModalContainer = styled.div`
   right: 0;
   bottom: 0;
   pointer-events: none;
+  z-index: 80;
 `;
 
 export const ModalBackdrop = styled.div`
