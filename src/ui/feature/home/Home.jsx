@@ -15,10 +15,14 @@ import IcLive from '../../../asset/ic_live.svg';
 import IcDownArrow from '../../../asset/ic_down_arrow.svg';
 import CTVIcon from "../../components/icon/Icon";
 import Recommend from "./component/Recommend";
+import Modal from "../../components/modal/Modal";
+import {useState} from "react";
 
 export default function Home() {
 
   const lst = [1, 2, 3, 4, 5, 6]
+
+  const [isReportOpen, setIsReportOpen] = useState(false);
 
   return (
     <Container>
@@ -33,7 +37,7 @@ export default function Home() {
             <C2VText text={'dummy title'} type={'title'}/>
             <C2VText text={'dummy body'} type={'body'}/>
           </Info>
-          <CTVButton type={'red'}>
+          <CTVButton onClick={() => setIsReportOpen(true)} type={'red'}>
             <C2VText text={'신고하기'} color={Color.white}/>
           </CTVButton>
         </InfoContainer>
@@ -53,6 +57,8 @@ export default function Home() {
         </RecommendControlContainer>
         {lst.map(_ => (<Recommend/>))}
       </RightContent>
+      <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
+      </Modal>
     </Container>
   );
 }
