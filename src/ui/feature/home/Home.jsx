@@ -17,7 +17,7 @@ import CTVIcon from "../../components/icon/Icon";
 import Recommend from "./component/Recommend";
 import Modal from "../../components/modal/Modal";
 import {useState} from "react";
-import Report from "../../components/report/Report";
+import Report from "../report/Report";
 
 export default function Home() {
 

@@ -1,10 +1,10 @@
 import {ButtonContainer, Container, Img, Info, InfoContent, InputContent, TitleContent} from "./ReportStyle";
-import C2VText from "../text/Text";
-import CTVInput from "../input/Input";
+import C2VText from "../../components/text/Text";
+import CTVInput from "../../components/input/Input";
 import {useState} from "react";
-import CTVInputArea from "../inputarea/InputArea";
-import Color from "../theme/color/Color";
-import CTVButton from "../button/Button";
+import CTVInputArea from "../../components/inputarea/InputArea";
+import Color from "../../components/theme/color/Color";
+import CTVButton from "../../components/button/Button";
 
 export default function Report({model}) {
 
