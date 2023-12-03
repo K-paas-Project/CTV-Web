@@ -6,6 +6,7 @@ import UiTest from "../uitest/UiTest";
 import Nav from "../../components/nav/Nav";
 import Rail from "../../components/rail/Rail";
 import {useState} from "react";
+import Check from "../check/Check";
 
 export const Url = {
   homeUrl: '/',
@@ -26,7 +27,7 @@ function App() {
         <Nav callback={() => setIsRail(i => !i)}/>
         <Routes>
           <Route path={Url.homeUrl} element={<Home/>}></Route>
-          <Route path={Url.checkUrl} element={<Home/>}></Route>
+          <Route path={Url.checkUrl} element={<Check/>}></Route>
           <Route path={Url.myUrl} element={<Home/>}></Route>
           <Route path={Url.uiTestUrl} element={<UiTest/>}></Route>
         </Routes>
