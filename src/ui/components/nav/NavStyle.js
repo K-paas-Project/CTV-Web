@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Color from "../theme/color/Color";
 
 export const Container = styled.div`
   width: 100%;
@@ -12,7 +11,6 @@ export const Container = styled.div`
 
 export const BurgerContainer = styled.div`
   margin-left: 24px;
-  
 `;
 
 
@@ -22,10 +20,14 @@ export const HomeContainer = styled.div`
 
 export const LeftContent = styled.div`
   display: flex;
+  height: 72px;
+  align-items: center;
 `
 
 export const RightContent = styled.div`
   display: flex;
+  height: 72px;
+  align-items: center;
 `
 
 export const LoginContainer = styled.div`
