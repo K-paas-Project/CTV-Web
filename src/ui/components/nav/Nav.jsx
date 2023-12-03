@@ -4,20 +4,23 @@ import CTVButton from "../button/Button";
 import IcBurger from '../../../asset/ic_burger.svg';
 import IcLogo from '../../../asset/ic_logo.svg';
 import C2VText from "../text/Text";
+import {useNavigate} from "react-router-dom";
+import {Url} from "../../feature/root/App";
 
-export default function Nav() {
+export default function Nav({callback}) {
+
+  const navigate = useNavigate();
   return (
     <>
       <Container>
         <LeftContent>
           <BurgerContainer>
-            <CTVButton padding={'0'} onClick={() => console.log('se')}>
+            <CTVButton padding={'0'} onClick={() => callback()}>
               <CTVIcon src={IcBurger}/>
-
             </CTVButton>
           </BurgerContainer>
           <HomeContainer>
-            <CTVButton padding={'0'} onClick={() => console.log('to home')}>
+            <CTVButton padding={'0'} onClick={() => navigate(Url.homeUrl)}>
               <CTVIcon src={IcLogo}/>
               <C2VText text={'CTV'} type={'body'}/>
             </CTVButton>
