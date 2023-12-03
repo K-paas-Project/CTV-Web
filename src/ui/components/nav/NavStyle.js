@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Color from "../theme/color/Color";
 
 export const Container = styled.div`
   width: 100%;
@@ -8,6 +9,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   z-index: 30;
+  background-color: ${'#' + Color.white};
 `
 
 export const BurgerContainer = styled.div`
