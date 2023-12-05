@@ -2,9 +2,9 @@ import {Container, DetailContent, DownContent} from "./CheckCeilStyle";
 import C2VText from "../../../components/text/Text";
 import Color from "../../../components/theme/color/Color";
 
-export default function CheckCeil({text}) {
+export default function CheckCeil({text, callback}) {
   return (
-    <Container>
+    <Container onClick={callback}>
       <div>(화재)</div>
       <DownContent>
         <C2VText text={'dummy title'} type={'body'} weight={700}/>

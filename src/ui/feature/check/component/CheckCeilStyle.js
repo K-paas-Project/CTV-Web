@@ -12,6 +12,7 @@ export const Container = styled.div`
   &:hover {
     background-color: #f4f5f9;
   }
+  cursor: pointer;
 `
 export const DetailContent = styled.div`
   display: flex;
