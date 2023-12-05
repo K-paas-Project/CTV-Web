@@ -1,14 +1,22 @@
 import C2VText from "../../components/text/Text";
+import Category from "../../components/category/Category";
+import {Container} from "./UiTestStyle";
 
 export default function UiTest() {
   return (
-    <>
-      <C2VText text={'sex'} type={'title'}/>
-      <C2VText text={'sex'} type={'headline'}/>
-      <C2VText text={'sex'} type={'body'}/>
-      <C2VText text={'sex'} type={'label'}/>
-      <C2VText text={'sex'} type={'caption'}/>
-      <C2VText text={'sex'} type={'mini'}/>
-    </>
+    <Container>
+      <C2VText text={'ss'} type={'title'}/>
+      <C2VText text={'ss'} type={'headline'}/>
+      <C2VText text={'ss'} type={'body'}/>
+      <C2VText text={'ss'} type={'label'}/>
+      <C2VText text={'ss'} type={'caption'}/>
+      <C2VText text={'ss'} type={'mini'}/>
+
+      <Category type={'산불'}/>
+      <Category type={'홍수'}/>
+      <Category type={'쓰나미'}/>
+      <Category type={'안전'}/>
+
+    </Container>
   )
 }
