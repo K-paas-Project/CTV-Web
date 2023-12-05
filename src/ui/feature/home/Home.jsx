@@ -18,6 +18,7 @@ import Recommend from "./component/Recommend";
 import Modal from "../../components/modal/Modal";
 import {useState} from "react";
 import Report from "../report/Report";
+import Category from "../../components/category/Category";
 
 export default function Home() {
 

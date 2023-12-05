@@ -1,4 +1,4 @@
-import {Container, SideBar} from "./CheckStyle";
+import {Container, Content, SideBar} from "./CheckStyle";
 import CheckCeil from "./component/CheckCeil";
 
 export default function Check() {
@@ -8,8 +8,10 @@ export default function Check() {
   return (
     <Container>
       <SideBar>
-        {arr.map(i => <CheckCeil text={i}/>)}
+        {arr.map(i => <CheckCeil callback={() => {console.log('change')}} text={i}/>)}
       </SideBar>
+      <Content>
+      </Content>
     </Container>
   );
 }

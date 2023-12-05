@@ -14,3 +14,8 @@ export const SideBar = styled.div`
   position: absolute;
   box-shadow: 2px 2px 8px 0 rgba(1, 1, 1, 0.1);
 `
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+`
