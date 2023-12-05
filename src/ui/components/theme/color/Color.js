@@ -8,7 +8,13 @@ const Color = {
   red2: 'FEC6C6',
   transparent: 'FFFFFFFF',
   primary2: 'AED5F9',
-  gray3: '76767B'
-}
+  gray3: '76767B',
+  red3: 'FFDEDE',
+  brown: '844911',
+  brown2: 'F8D5C6',
+  blue2: '3352FF',
+  blue3: 'DEE3FF',
+  green2: 'CCF9E6'
+};
 
 export default Color;
