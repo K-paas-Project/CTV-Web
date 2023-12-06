@@ -2,10 +2,11 @@ import {Container, InfoContent, Video} from "./RecommendStyle";
 import C2VText from "../../../components/text/Text";
 import Color from "../../../components/theme/color/Color";
 
-export default function Recommend(model) {
+export default function Recommend({model, callback}) {
+
   return (
-    <Container>
-      <Video src={model.model}/>
+    <Container onClick={() => callback()}>
+      <Video src={model}/>
       <InfoContent>
         <C2VText text={'dummy title'} type={'body'}/>
         <div style={{height: '4px'}}/>

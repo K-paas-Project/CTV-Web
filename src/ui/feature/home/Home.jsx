@@ -22,9 +22,18 @@ import Category from "../../components/category/Category";
 
 export default function Home() {
 
-  const lst = [1, 2, 3, 4, 5];
+  const lst = [
+    'http://223.130.136.187:8000/fire',
+    'http://223.130.136.187:8000/video1',
+    'http://223.130.136.187:8000/video2',
+    'http://223.130.136.187:8000/video3',
+    'http://223.130.136.187:8000/video4',
+    'http://223.130.136.187:8000/video5',
+  ];
 
   const [isReportOpen, setIsReportOpen] = useState(false);
+
+  const [clickedContent, setClickedContent] = useState('http://223.130.136.187:8000/fire');
 
   useEffect(() => {
 
@@ -34,7 +43,7 @@ export default function Home() {
     <Container>
       <LeftContent>
         <MainContent>
-          <Img src="http://223.130.136.187:8000/fire" alt=""/>
+          <Img src={clickedContent} alt=""/>
         </MainContent>
         <InfoContainer>
           <Info>
@@ -60,7 +69,7 @@ export default function Home() {
           </CTVButton>
         </RecommendControlContainer>
         <div style={{ height: '16px' }}></div>
-        {lst.map(i => (<Recommend model={`http://223.130.136.187:8000/video${i}`}/>))}
+        {lst.map(i => (<Recommend callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
         <Report/>
