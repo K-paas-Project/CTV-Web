@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin-bottom: 16px;
 `
 
-export const Video = styled.video`
+export const Video = styled.img`
   border-radius: 16px;
   box-shadow: 2px 2px 8px 0 #f4f5f9;
   width: 60%;

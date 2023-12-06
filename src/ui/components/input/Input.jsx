@@ -1,7 +1,7 @@
 import {BaseInput} from "./InputStyle";
 
-export default function CTVInput({ value, onChange, placeholder}) {
+export default function CTVInput({isPw, value, onChange, placeholder}) {
   return (
-    <BaseInput value={value} onChange={i => onChange(i)} placeholder={placeholder}/>
+    <BaseInput type={isPw ? 'password' : 'text'} value={value} onChange={i => onChange(i)} placeholder={placeholder}/>
   );
-}
+};
