@@ -11,3 +11,7 @@ export const InputContent = styled.div`
   flex-direction: column;
   align-items: start;
 `
+
+export const Content = styled.div`
+  display: flex;
+`

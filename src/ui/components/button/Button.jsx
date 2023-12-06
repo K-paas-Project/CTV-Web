@@ -1,7 +1,7 @@
 import {BaseButton} from "./ButtonStyle";
 import Color from "../theme/color/Color";
 
-export default function CTVButton({onClick, children, type, padding}) {
+export default function CTVButton({isLoading, onClick, children, type, padding}) {
 
   let property = generateProperty(type);
 
@@ -16,7 +16,7 @@ export default function CTVButton({onClick, children, type, padding}) {
       case 'blueStroke':
         color = Color.white;
         strokeColor = Color.primary;
-        shadowColor = Color.primary2;
+        shadowColor = Color.transparent;
         break;
       case 'red':
         color = Color.red;
@@ -31,6 +31,7 @@ export default function CTVButton({onClick, children, type, padding}) {
 
   return (
     <BaseButton
+      isLoading={isLoading}
       color={property.color}
       strokeColor={property.strokeColor}
       onClick={onClick ? () => onClick() : () => {
