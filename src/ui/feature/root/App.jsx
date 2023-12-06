@@ -8,6 +8,7 @@ import Rail from "../../components/rail/Rail";
 import {useState} from "react";
 import Check from "../check/Check";
 import Login from "../login/Login";
+import Join from "../join/Join";
 
 export const Url = {
   homeUrl: '/',
@@ -34,6 +35,7 @@ function App() {
           <Route path={Url.myUrl} element={<Home/>}></Route>
           <Route path={Url.uiTestUrl} element={<UiTest/>}></Route>
           <Route path={Url.login} element={<Login/>}></Route>
+          <Route path={Url.join} element={<Join/>}></Route>
         </Routes>
       </BrowserRouter>
     </AppContainer>
