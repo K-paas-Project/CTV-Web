@@ -16,7 +16,7 @@ import IcDownArrow from '../../../asset/ic_down_arrow.svg';
 import CTVIcon from "../../components/icon/Icon";
 import Recommend from "./component/Recommend";
 import Modal from "../../components/modal/Modal";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Report from "../report/Report";
 import Category from "../../components/category/Category";
 
@@ -25,6 +25,19 @@ export default function Home() {
   const lst = [1, 2, 3, 4, 5, 6]
 
   const [isReportOpen, setIsReportOpen] = useState(false);
+
+  useEffect(() => {
+    const eventSource = new EventSource('http://223.130.136.187:8000/fire');
+
+    eventSource.onmessage = (event) => {
+      const data = JSON.parse(event.data);
+      console.log('Received SSE data:', data);
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
 
   return (
     <Container>

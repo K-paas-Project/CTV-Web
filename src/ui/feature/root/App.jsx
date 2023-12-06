@@ -7,12 +7,15 @@ import Nav from "../../components/nav/Nav";
 import Rail from "../../components/rail/Rail";
 import {useState} from "react";
 import Check from "../check/Check";
+import Login from "../login/Login";
 
 export const Url = {
   homeUrl: '/',
   checkUrl: '/check',
   myUrl: '/my',
   uiTestUrl: '/ui-test',
+  login: '/login',
+  join: '/join'
 };
 
 function App() {
@@ -30,6 +33,7 @@ function App() {
           <Route path={Url.checkUrl} element={<Check/>}></Route>
           <Route path={Url.myUrl} element={<Home/>}></Route>
           <Route path={Url.uiTestUrl} element={<UiTest/>}></Route>
+          <Route path={Url.login} element={<Login/>}></Route>
         </Routes>
       </BrowserRouter>
     </AppContainer>

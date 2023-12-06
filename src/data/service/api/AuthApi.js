@@ -3,8 +3,8 @@ import {LocalKeys} from "../../local/LocalClient";
 
 export function login(userAccount, password) {
   return httpClient.post('/api/v1/login', {
-    userAccount,
-    password
+    userAccount: userAccount,
+    password: password
   });
 }
 

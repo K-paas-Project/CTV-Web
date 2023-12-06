@@ -28,7 +28,7 @@ export default function Nav({callback}) {
         </LeftContent>
         <RightContent>
           <LoginContainer>
-            <CTVButton onClick={() => console.log('login')}>
+            <CTVButton onClick={() => navigate(Url.login)}>
               <C2VText text={'로그인'} type={'body'}/>
             </CTVButton>
           </LoginContainer>
