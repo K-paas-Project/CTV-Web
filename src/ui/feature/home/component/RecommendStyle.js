@@ -4,6 +4,12 @@ export const Container = styled.div`
   display: flex;
   width: 30vw;
   margin-bottom: 16px;
+  &:hover {
+    background-color: #f4f5f9;
+  }
+  border-radius: 16px;
+  transition: background-color 0.3s;
+  cursor: pointer;
 `
 
 export const Video = styled.img`
