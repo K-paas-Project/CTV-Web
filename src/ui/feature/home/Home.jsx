@@ -1,5 +1,5 @@
 import {
-  Container,
+  Container, Img,
   Info,
   InfoContainer,
   LeftContent,
@@ -22,24 +22,11 @@ import Category from "../../components/category/Category";
 
 export default function Home() {
 
-  const lst = [1, 2, 3, 4, 5]
+  const lst = [1, 2, 3, 4, 5];
 
   const [isReportOpen, setIsReportOpen] = useState(false);
 
   useEffect(() => {
-    // const eventSource = new EventSource('http://223.130.136.187:8000/fire');
-    //
-    // eventSource.onmessage = (event) => {
-    //   console.log('Received SSE data:', event);
-    // };
-    // eventSource.onerror = (error) => {
-    //   console.error('EventSource failed:', error);
-    //   eventSource.close();
-    // };
-    //
-    // return () => {
-    //   eventSource.close();
-    // };
 
   }, []);
 
@@ -47,13 +34,7 @@ export default function Home() {
     <Container>
       <LeftContent>
         <MainContent>
-          {/*<MainVideo controls autoPlay={true}>*/}
-          {/*  <source type={'video/mp4'} src={'http://223.130.136.187:8000/fire'}/>*/}
-          {/*</MainVideo>*/}
-          <img style={{
-            width: '100%',
-            borderRadius: '16px'
-          }} src="http://223.130.136.187:8000/fire" alt=""/>
+          <Img src="http://223.130.136.187:8000/fire" alt=""/>
         </MainContent>
         <InfoContainer>
           <Info>
@@ -78,6 +59,7 @@ export default function Home() {
             <CTVIcon src={IcDownArrow} width={24} height={24}/>
           </CTVButton>
         </RecommendControlContainer>
+        <div style={{ height: '16px' }}></div>
         {lst.map(i => (<Recommend model={`http://223.130.136.187:8000/video${i}`}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>

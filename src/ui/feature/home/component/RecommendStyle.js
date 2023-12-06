@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 100%;
+  width: 30vw;
   margin-bottom: 16px;
 `
 
 export const Video = styled.img`
   border-radius: 16px;
-  box-shadow: 2px 2px 8px 0 #f4f5f9;
   width: 60%;
+  height: calc(30vw * 6 / 10 / 16 * 9);
+  box-shadow: 2px 2px 8px 0 #bbb;
+  background-color: #f4f5f9;
 `
 
 export const InfoContent = styled.div`
