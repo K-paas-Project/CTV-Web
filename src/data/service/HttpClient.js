@@ -1,6 +1,7 @@
 import axios from "axios";
 import {LocalKeys} from "../local/LocalClient";
 import jwt from 'jsonwebtoken';
+import {refresh} from "./api/AuthApi";
 
 export const httpClient = axios.create({
   baseURL: 'http://223.130.136.187:8080',
@@ -19,6 +20,12 @@ httpClient.interceptors.request.use(
       console.log('httpClient -', expirationTime, currentTime);
       if (expirationTime < currentTime) {
         // refresh
+        refresh()
+          .then(i => {
+            const {accessToken} = i.data.data;
+            console.log(accessToken);
+            localStorage.setItem(LocalKeys.accessToken, accessToken);
+          });
       } else {
         config.headers.Authorization = `Bearer ${accessToken}`;
       }
