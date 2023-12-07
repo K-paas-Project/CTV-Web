@@ -5,6 +5,9 @@ export const Container = styled.div`
 `;
 
 export const MainContent = styled.div`
+  position: relative;
+  display: flex;
+  align-items: start;
 `
 
 export const LeftContent = styled.div`
@@ -28,7 +31,18 @@ export const InfoContainer = styled.div`
   align-items: center;
 `
 
+export const CategoryContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 3;
+  position: relative;
+  margin-left: auto;
+  padding: 8px;
+`
+
 export const Img = styled.img`
+  position: absolute;
   width: 65vw;
   background-color: #f4f5f9;
   height: calc(65vw / 16 * 9);

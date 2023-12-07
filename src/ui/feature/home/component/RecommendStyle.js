@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   width: 30vw;
   margin-bottom: 16px;
+  position: relative;
   &:hover {
     background-color: #f4f5f9;
   }
@@ -27,3 +28,8 @@ export const InfoContent = styled.div`
   margin-top: 4px;
 `
 
+export const CategoryContent = styled.div`
+  position: absolute;
+  right: 40%;
+  padding: 8px;
+`

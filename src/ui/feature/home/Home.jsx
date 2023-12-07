@@ -6,7 +6,7 @@ import {
   MainContent,
   MainVideo,
   RecommendControlContainer,
-  RightContent
+  RightContent, CategoryContent
 } from "./HomeStyle";
 import C2VText from "../../components/text/Text";
 import CTVButton from "../../components/button/Button";
@@ -22,8 +22,10 @@ import Category from "../../components/category/Category";
 
 export default function Home() {
 
+  const fire = 'http://223.130.136.187:8000/fire'
+
   const lst = [
-    'http://223.130.136.187:8000/fire',
+    fire,
     'http://223.130.136.187:8000/video1',
     'http://223.130.136.187:8000/video2',
     'http://223.130.136.187:8000/video3',
@@ -33,7 +35,7 @@ export default function Home() {
 
   const [isReportOpen, setIsReportOpen] = useState(false);
 
-  const [clickedContent, setClickedContent] = useState('http://223.130.136.187:8000/fire');
+  const [clickedContent, setClickedContent] = useState(fire);
 
   useEffect(() => {
 
@@ -44,6 +46,9 @@ export default function Home() {
       <LeftContent>
         <MainContent>
           <Img src={clickedContent} alt=""/>
+          {clickedContent === fire ? <CategoryContent>
+            <Category type={'산불'}/>
+          </CategoryContent> : null}
         </MainContent>
         <InfoContainer>
           <Info>
@@ -69,7 +74,7 @@ export default function Home() {
           </CTVButton>
         </RecommendControlContainer>
         <div style={{ height: '16px' }}></div>
-        {lst.map(i => (<Recommend callback={() => setClickedContent(i)} model={i}/>))}
+        {lst.map(i => (<Recommend type={i == fire ? '산불' : null} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
         <Report/>

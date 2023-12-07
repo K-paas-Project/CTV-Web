@@ -7,7 +7,8 @@ export function report(category, title, content, location, image) {
     content,
     location,
     image
-  });
+  },
+    );
 }
 
 export function fixReport(id, reportOrganization, status) {
