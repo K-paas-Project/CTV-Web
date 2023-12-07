@@ -25,6 +25,7 @@ httpClient.interceptors.request.use(
             const {accessToken} = i.data.data;
             console.log(accessToken);
             localStorage.setItem(LocalKeys.accessToken, accessToken);
+            config.headers.Authorization = `Bearer ${accessToken}`;
           });
       } else {
         config.headers.Authorization = `Bearer ${accessToken}`;
