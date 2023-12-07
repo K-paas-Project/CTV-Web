@@ -33,11 +33,11 @@ export const InfoContainer = styled.div`
 
 export const CategoryContent = styled.div`
   display: flex;
+  position: absolute;
   flex-direction: column;
   height: 100%;
   z-index: 3;
-  position: relative;
-  margin-left: auto;
+  right: 0;
   padding: 8px;
 `
 
@@ -50,7 +50,7 @@ export const LiveContent = styled.div`
 `
 
 export const Img = styled.img`
-  position: absolute;
+  position: relative;
   width: 65vw;
   background-color: #f4f5f9;
   height: calc(65vw / 16 * 9);
