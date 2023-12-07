@@ -6,7 +6,7 @@ const Color = {
   green: '17D987',
   gray: 'ddd',
   red2: 'FEC6C6',
-  transparent: 'FFFFFFFF',
+  transparent: 'FFFFFF',
   primary2: 'AED5F9',
   gray3: '76767B',
   red3: 'FFDEDE',

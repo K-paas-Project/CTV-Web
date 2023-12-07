@@ -41,6 +41,14 @@ export const CategoryContent = styled.div`
   padding: 8px;
 `
 
+export const LiveContent = styled.div`
+  position: absolute;
+  display: flex;
+  height: calc(65vw / 16 * 9);
+  align-items: end;
+  padding: 20px;
+`
+
 export const Img = styled.img`
   position: absolute;
   width: 65vw;

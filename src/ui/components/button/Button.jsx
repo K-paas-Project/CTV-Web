@@ -24,6 +24,9 @@ export default function CTVButton({isLoading, onClick, children, type, padding})
         shadowColor = Color.red2;
         break;
       default:
+        color = Color.transparent;
+        strokeColor = Color.transparent;
+        shadowColor = Color.transparent;
         break;
     }
     return {color, strokeColor, shadowColor};
