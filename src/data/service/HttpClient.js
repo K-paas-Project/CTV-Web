@@ -5,14 +5,25 @@ import {refresh} from "./api/AuthApi";
 
 export const httpClient = axios.create({
   baseURL: 'http://223.130.136.187:8080/',
-  timeout: 5000
+  timeout: 5000,
+  // withCredentials: true
 });
 
 
 httpClient.interceptors.request.use(
   (config) => {
+
+    if (config.url === '/api/v1/join' || config.url === '/api/v1/login') {
+      console.log('interceptor - pass');
+      return config;
+    }
+
     const accessToken = localStorage.getItem(LocalKeys.accessToken);
     const refreshToken = localStorage.getItem(LocalKeys.refreshToken);
+
+    console.log(config.data);
+    console.log(config.headers);
+
     if (accessToken) {
       const decoded = jwtDecode(accessToken);
       const expirationTime = decoded.exp;

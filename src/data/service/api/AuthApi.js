@@ -10,10 +10,10 @@ export function login(userAccount, password) {
 
 export function join(userAccount, password, userName, organization) {
   return httpClient.post('/api/v1/join', {
-    userAccount,
-    password,
-    userName,
-    organization
+    userAccount: userAccount,
+    password: password,
+    userName: userName,
+    organization: organization
   });
 }
 
