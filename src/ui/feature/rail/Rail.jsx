@@ -6,7 +6,7 @@ import IcHome1 from '../../../asset/ic_home_1.svg';
 import IcHome2 from '../../../asset/ic_home_2.svg';
 import IcMy1 from '../../../asset/ic_my_1.svg';
 import IcMy2 from '../../../asset/ic_my_2.svg';
-import {Url} from "../../feature/root/App";
+import {Url} from "../root/App";
 import {useNavigate} from "react-router-dom";
 
 export default function Rail({callback}) {

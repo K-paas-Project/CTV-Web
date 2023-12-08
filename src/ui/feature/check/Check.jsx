@@ -24,7 +24,9 @@ export default function Check() {
   return (
     <Container>
       <SideBar>
-        {arr.map(i => <CheckCeil callback={() => {console.log('change')}} model={i}/>)}
+        {arr.map(i => <CheckCeil callback={() => {
+          console.log('change')
+        }} model={i}/>)}
         {!isLogin ? <div>로그인 해 주세요!</div> : null}
       </SideBar>
       <Content>

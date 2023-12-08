@@ -50,9 +50,9 @@ export default function Home() {
             <Category type={'산불'}/>
           </CategoryContent> : null}
           <LiveContent>
-              <C2VText text={'실시간'} type={'body'} color={Color.white}/>
-              <div style={{width: '10px'}}></div>
-              <CTVIcon src={IcLive} width={12} height={12}/>
+            <C2VText text={'실시간'} type={'body'} color={Color.white}/>
+            <div style={{width: '10px'}}></div>
+            <CTVIcon src={IcLive} width={12} height={12}/>
           </LiveContent>
         </MainContent>
         <InfoContainer>
@@ -78,7 +78,7 @@ export default function Home() {
             <CTVIcon src={IcDownArrow} width={24} height={24}/>
           </CTVButton>
         </RecommendControlContainer>
-        <div style={{ height: '16px' }}></div>
+        <div style={{height: '16px'}}></div>
         {lst.map(i => (<Recommend type={i == fire ? '산불' : null} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>

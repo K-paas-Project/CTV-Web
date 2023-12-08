@@ -1,10 +1,10 @@
 import {AppContainer} from "./AppStyle";
 import {GlobalStyle} from "./GlobalStyle";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from "../home/Home";
 import UiTest from "../uitest/UiTest";
 import Nav from "../../components/nav/Nav";
-import Rail from "../../components/rail/Rail";
+import Rail from "../rail/Rail";
 import {useState} from "react";
 import Check from "../check/Check";
 import Login from "../login/Login";

@@ -69,7 +69,7 @@ export default function Join() {
         }}>
           <C2VText text={'회원가입'} color={Color.white}/>
         </CTVButton>
-        <div style={{ width: '8px' }}></div>
+        <div style={{width: '8px'}}></div>
         <CTVButton type={'blueStroke'} onClick={() => navigate(Url.login)}>
           <C2VText text={'로그인'}/>
         </CTVButton>
