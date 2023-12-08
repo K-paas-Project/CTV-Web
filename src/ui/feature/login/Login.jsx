@@ -52,6 +52,7 @@ export default function Login() {
             })
             .catch(e => {
               setIsLoading(false);
+              alert('로그인 실패', e);
               console.log(e);
             });
         }}>

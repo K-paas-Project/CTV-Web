@@ -62,6 +62,7 @@ export default function Join() {
               navigate(Url.login);
             })
             .catch(e => {
+              alert('회원가입 실패', e);
               setIsLoading(false);
               console.log(e);
             });
