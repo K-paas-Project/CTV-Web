@@ -1,14 +1,29 @@
 import {httpClient} from "../HttpClient";
 
 export function report(category, title, content, location, image) {
-  return httpClient.post('/api/v1/report', {
+
+  const formData = new FormData();
+
+  const imgStr = `image${new Date().getMilliseconds()}.jpg`
+
+  console.log(category, title, content, location, image);
+
+  console.log(imgStr);
+  formData.append('image', image, imgStr);
+  formData.append('data', JSON.stringify({
     category,
     title,
     content,
-    location,
-    image
-  },
-    );
+    location
+  }));
+
+  const config = {
+    headers: {
+      'Content-Type': 'multipart/form-data' // Important: Set the content type to 'multipart/form-data'
+    }
+  };
+
+  return httpClient.post('/api/v1/report', formData);
 }
 
 export function fixReport(id, reportOrganization, status) {

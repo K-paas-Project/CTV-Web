@@ -13,16 +13,17 @@ export const httpClient = axios.create({
 httpClient.interceptors.request.use(
   (config) => {
 
-    if (config.url === '/api/v1/join' || config.url === '/api/v1/login') {
-      console.log('interceptor - pass');
+    console.log(config.data);
+
+    if (config.url === '/api/v1/join'
+      || config.url === '/api/v1/login'
+      || config.url === '/api/v1/report') {
+      console.log(`interceptor - pass ${config.url}`);
       return config;
     }
 
     const accessToken = localStorage.getItem(LocalKeys.accessToken);
     const refreshToken = localStorage.getItem(LocalKeys.refreshToken);
-
-    console.log(config.data);
-    console.log(config.headers);
 
     if (accessToken) {
       const decoded = jwtDecode(accessToken);

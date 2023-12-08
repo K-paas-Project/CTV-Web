@@ -16,7 +16,7 @@ import IcDownArrow from '../../../asset/ic_down_arrow.svg';
 import CTVIcon from "../../components/icon/Icon";
 import Recommend from "./component/Recommend";
 import Modal from "../../components/modal/Modal";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import Report from "../report/Report";
 import Category from "../../components/category/Category";
 
@@ -37,15 +37,13 @@ export default function Home() {
 
   const [clickedContent, setClickedContent] = useState(fire);
 
-  useEffect(() => {
-
-  }, []);
+  const imgRef = useRef();
 
   return (
     <Container>
       <LeftContent>
         <MainContent>
-          <Img src={clickedContent} alt=""/>
+          <Img src={clickedContent} alt="" ref={imgRef}/>
           {clickedContent === fire ? <CategoryContent>
             <Category type={'산불'}/>
           </CategoryContent> : null}
@@ -82,7 +80,7 @@ export default function Home() {
         {lst.map(i => (<Recommend type={i == fire ? '산불' : null} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
-        <Report/>
+        <Report callback={() => setIsReportOpen(false)} category={'산불'} imgRef={imgRef}/>
       </Modal>
     </Container>
   );
