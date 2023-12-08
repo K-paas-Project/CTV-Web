@@ -6,6 +6,7 @@ import {getReportAll} from "../../../data/service/api/ReportApi";
 export default function Check() {
 
   const [arr, setArr] = useState([]);
+  const [isLogin, setIsLogin] = useState(true);
 
   useEffect(() => {
     getReportAll()
@@ -13,7 +14,10 @@ export default function Check() {
         const lst = response.data.data;
         console.log(lst);
         setArr(lst);
-
+      })
+      .catch(e => {
+        setIsLogin(false);
+        alert('로그인 해 주세요!');
       })
   }, []);
 
@@ -21,8 +25,10 @@ export default function Check() {
     <Container>
       <SideBar>
         {arr.map(i => <CheckCeil callback={() => {console.log('change')}} model={i}/>)}
+        {!isLogin ? <div>로그인 해 주세요!</div> : null}
       </SideBar>
       <Content>
+
       </Content>
     </Container>
   );
