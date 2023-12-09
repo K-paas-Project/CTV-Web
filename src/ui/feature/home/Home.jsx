@@ -22,15 +22,35 @@ import Category from "../../components/category/Category";
 
 export default function Home() {
 
-  const fire = 'http://223.130.136.187:8000/fire'
+  const fire = {
+    url: 'http://223.130.136.187:8000/fire',
+    location: '대구광역시 팔공산',
+    cctv: '팔공 IC 네거리'
+  }
 
   const lst = [
     fire,
-    'http://223.130.136.187:8000/video1',
-    'http://223.130.136.187:8000/video2',
-    'http://223.130.136.187:8000/video3',
-    'http://223.130.136.187:8000/video4',
-    'http://223.130.136.187:8000/video5',
+    {
+      url: 'http://223.130.136.187:8000/video1',
+      location: '인천광역시 잠진포 사거리',
+      cctv: '2-1 4번 카메라'
+    }, {
+      url: 'http://223.130.136.187:8000/video2',
+      location: '한강공원',
+      cctv: '4-2 카메라'
+    }, {
+      url: 'http://223.130.136.187:8000/video3',
+      location: '한강 잠실대교',
+      cctv: '2번 카메라'
+    }, {
+      url: 'http://223.130.136.187:8000/video4',
+      location: '제주 백록담 모니터링',
+      cctv: '1번 카메라'
+    }, {
+      url: 'http://223.130.136.187:8000/video5',
+      location: '대구 달성군 구지로',
+      cctv: '3-1 4번 카메라'
+    },
   ];
 
   const [isReportOpen, setIsReportOpen] = useState(false);
@@ -43,7 +63,7 @@ export default function Home() {
     <Container>
       <LeftContent>
         <MainContent>
-          <Img src={clickedContent} alt="" ref={imgRef}/>
+          <Img src={clickedContent.url} alt="" ref={imgRef}/>
           {clickedContent === fire ? <CategoryContent>
             <Category type={'산불'}/>
           </CategoryContent> : null}

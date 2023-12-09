@@ -7,14 +7,14 @@ export default function Recommend({model, callback, type}) {
 
   return (
     <Container onClick={() => callback()}>
-      <Video src={model}/>
+      <Video src={model.url}/>
       {type ? <CategoryContent>
         <Category type={'산불'}/>
       </CategoryContent> : null}
       <InfoContent>
-        <C2VText text={'dummy title'} type={'body'}/>
+        <C2VText text={model.location} type={'body'}/>
         <div style={{height: '4px'}}/>
-        <C2VText text={'dummy body'} type={'caption'} color={Color.gray3}/>
+        <C2VText text={model.cctv} type={'caption'} color={Color.gray3}/>
       </InfoContent>
     </Container>
   );
