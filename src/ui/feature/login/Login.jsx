@@ -44,8 +44,8 @@ export default function Login() {
               const {accessToken, refreshToken} = response.data.data;
               setIsLoading(false);
               console.log(':: login');
-              console.log('accessToken -', accessToken);
-              console.log('refreshToken -', refreshToken);
+              // console.log('accessToken -', accessToken);
+              // console.log('refreshToken -', refreshToken);
               localStorage.setItem(LocalKeys.accessToken, accessToken);
               localStorage.setItem(LocalKeys.refreshToken, refreshToken);
               navigate(Url.homeUrl);
@@ -63,7 +63,6 @@ export default function Login() {
           <C2VText text={'회원가입'}/>
         </CTVButton>
       </Content>
-
     </Container>
   );
 }

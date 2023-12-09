@@ -4,7 +4,7 @@ import Color from "../../components/theme/color/Color";
 export const Container = styled.div`
   width: 240px;
   height: 100%;
-  position: absolute;
+  position: fixed;
   background-color: ${'#' + Color.white};
   z-index: 20;
   padding-top: 72px;
