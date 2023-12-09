@@ -7,6 +7,7 @@ export default function Check() {
 
   const [arr, setArr] = useState([]);
   const [isLogin, setIsLogin] = useState(true);
+  const [model, setModel] = useState(null);
 
   useEffect(() => {
     getReportAll()
@@ -25,12 +26,12 @@ export default function Check() {
     <Container>
       <SideBar>
         {arr.map(i => <CheckCeil callback={() => {
-          console.log('change')
+          setModel(i);
         }} model={i}/>)}
         {!isLogin ? <div>로그인 해 주세요!</div> : null}
       </SideBar>
       <Content>
-
+        {model ? <img src={model.imgUrl} alt=""/> : null}
       </Content>
     </Container>
   );

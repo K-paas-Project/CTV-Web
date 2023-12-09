@@ -8,6 +8,7 @@ import CTVButton from "../../components/button/Button";
 import {report} from "../../../data/service/api/ReportApi";
 import axios from "axios";
 import Category from "../../components/category/Category";
+import {httpClient} from "../../../data/service/HttpClient";
 
 export default function Report({callback, category, imgRef}) {
 

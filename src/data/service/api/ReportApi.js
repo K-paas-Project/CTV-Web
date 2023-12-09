@@ -1,4 +1,5 @@
 import {httpClient} from "../HttpClient";
+import FormData from 'form-data';
 
 export function report(category, title, content, location, image) {
 
@@ -7,23 +8,23 @@ export function report(category, title, content, location, image) {
   const imgStr = `image${new Date().getMilliseconds()}.jpg`
 
   console.log(category, title, content, location, image);
-
-  console.log(imgStr);
-  formData.append('image', image, imgStr);
-  formData.append('data', JSON.stringify({
+  const json = JSON.stringify({
     category,
     title,
     content,
     location
+  })
+
+  formData.append('image', image, imgStr);
+  formData.append('data', new Blob([json], {
+    type: 'application/json'
   }));
 
-  const config = {
+  return httpClient.post('/api/v1/report', formData, {
     headers: {
-      'Content-Type': 'multipart/form-data' // Important: Set the content type to 'multipart/form-data'
+      'Content-Type': 'multipart/form-data',
     }
-  };
-
-  return httpClient.post('/api/v1/report', formData);
+  });
 }
 
 export function fixReport(id, reportOrganization, status) {

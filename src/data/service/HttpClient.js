@@ -5,7 +5,7 @@ import {refresh} from "./api/AuthApi";
 
 export const httpClient = axios.create({
   baseURL: 'http://223.130.136.187:8080/',
-  timeout: 5000,
+  // timeout: 10000,
   // withCredentials: true
 });
 
@@ -17,7 +17,8 @@ httpClient.interceptors.request.use(
 
     if (config.url === '/api/v1/join'
       || config.url === '/api/v1/login'
-      || config.url === '/api/v1/report') {
+      || config.url === '/api/v1/report'
+      || config.url === '/api/v1/refresh') {
       console.log(`interceptor - pass ${config.url}`);
       return config;
     }
