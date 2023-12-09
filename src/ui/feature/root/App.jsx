@@ -9,6 +9,7 @@ import {useState} from "react";
 import Check from "../check/Check";
 import Login from "../login/Login";
 import Join from "../join/Join";
+import My from "../my/My";
 
 export const Url = {
   homeUrl: '/',
@@ -32,7 +33,7 @@ function App() {
         <Routes>
           <Route path={Url.homeUrl} element={<Home/>}></Route>
           <Route path={Url.checkUrl} element={<Check/>}></Route>
-          <Route path={Url.myUrl} element={<Home/>}></Route>
+          <Route path={Url.myUrl} element={<My/>}></Route>
           <Route path={Url.uiTestUrl} element={<UiTest/>}></Route>
           <Route path={Url.login} element={<Login/>}></Route>
           <Route path={Url.join} element={<Join/>}></Route>
