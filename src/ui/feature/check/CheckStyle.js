@@ -36,5 +36,10 @@ export const TitleContent = styled.div`
 export const Img = styled.img`
   border-radius: 16px;
   margin-top: 36px;
-  width: 30vw;
+  width: 40vw;
+`
+
+export const DetailContent = styled.div`
+  display: flex;
+  align-items: center;
 `

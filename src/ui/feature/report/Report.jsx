@@ -15,6 +15,7 @@ export default function Report({callback, category, imgRef}) {
   const [content, setContent] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [blob, setBlob] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const img = imgRef.current;
@@ -28,13 +29,17 @@ export default function Report({callback, category, imgRef}) {
     canvas.height = img.height * 1.6;
     img.crossOrigin = 'Anonymous';
     context.drawImage(img, 0, 0);
-    canvas.toBlob((b) => {
-      console.log('Blob 생성 완료:', b);
-      const blobUrl = URL.createObjectURL(b);
-      setBlob(b);
-      console.log(blobUrl);
-      setImgUrl(blobUrl);
-    });
+    try {
+      canvas.toBlob((b) => {
+        console.log('Blob 생성 완료:', b);
+        const blobUrl = URL.createObjectURL(b);
+        setBlob(b);
+        console.log(blobUrl);
+        setImgUrl(blobUrl);
+      });
+    } catch {
+      setImgUrl('');
+    }
   }, []);
 
 
@@ -66,13 +71,18 @@ export default function Report({callback, category, imgRef}) {
                       onChange={(i) => setContent(i.target.value)}/>
       </InputContent>
       <ButtonContainer>
-        <CTVButton type={'red'} onClick={() => {
+        <CTVButton isLoading={isLoading} type={'red'} onClick={() => {
+          setIsLoading(true);
           report(category, '제목', content, '대구 어딘가', blob)
             .then(res => {
+              setIsLoading(false);
               callback();
               console.log(res);
             })
-            .catch(e => console.log(e));
+            .catch(e => {
+              setIsLoading(false);
+              console.log(e)
+            });
         }}>
           <C2VText text={'신고 완료'} type={'label'} color={Color.white}/>
         </CTVButton>
