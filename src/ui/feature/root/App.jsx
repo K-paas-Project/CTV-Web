@@ -28,7 +28,7 @@ function App() {
     <AppContainer>
       <GlobalStyle/>
       <BrowserRouter>
-        {isRail ? <Rail callback={() => setIsRail(false)}/> : null}
+        <Rail isRail={isRail} callback={() => setIsRail(false)}/>
         <Nav callback={() => setIsRail(i => !i)}/>
         <Routes>
           <Route path={Url.homeUrl} element={<Home/>}></Route>

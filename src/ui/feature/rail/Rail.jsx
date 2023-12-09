@@ -9,7 +9,7 @@ import IcMy2 from '../../../asset/ic_my_2.svg';
 import {Url} from "../root/App";
 import {useNavigate} from "react-router-dom";
 
-export default function Rail({callback}) {
+export default function Rail({isRail, callback}) {
 
   const pathName = window.location.pathname;
 
@@ -37,7 +37,9 @@ export default function Rail({callback}) {
   ]
 
   return (
-    <Container>
+    <Container style={{
+      left: isRail ? 0 : -240
+    }}>
       {arr.map((i) => (<RailCeil callback={() => {
         callback();
         navigate(i.url);
