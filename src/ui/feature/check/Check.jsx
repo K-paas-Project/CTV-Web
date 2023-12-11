@@ -6,12 +6,15 @@ import Category from "../../components/category/Category";
 import C2VText from "../../components/text/Text";
 import Color from "../../components/theme/color/Color";
 import {LocalKeys} from "../../../data/local/LocalClient";
+import {useNavigate} from "react-router-dom";
+import {Url} from "../root/App";
 
 export default function Check() {
 
   const [arr, setArr] = useState([]);
   const [isLogin, setIsLogin] = useState(true);
   const [model, setModel] = useState(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     getReportAll()
@@ -21,8 +24,8 @@ export default function Check() {
         setArr(lst);
       })
       .catch(e => {
+        navigate(Url.login);
         setIsLogin(false);
-        alert('로그인 해 주세요!');
       })
   }, []);
   let dateText;
@@ -37,7 +40,6 @@ export default function Check() {
         {arr.map(i => <CheckCeil callback={() => {
           setModel(i);
         }} model={i}/>)}
-        {!isLogin ? <div>로그인 해 주세요!</div> : null}
       </SideBar>
       <Content>
         {model ? <TitleContent>
