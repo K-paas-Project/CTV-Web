@@ -12,14 +12,14 @@ export const httpClient = axios.create({
 
 httpClient.interceptors.request.use(
   (config) => {
-
-    console.log(config.data);
+    console.log('interceptor - url: ', config.url);
+    console.log('interceptor - date: ',config.data);
 
     if (config.url === '/api/v1/join'
       || config.url === '/api/v1/login'
       || config.url === '/api/v1/report'
       || config.url === '/api/v1/refresh') {
-      console.log(`interceptor - pass ${config.url}`);
+      console.log(`interceptor - passed-url: ${config.url}`);
       return config;
     }
 
