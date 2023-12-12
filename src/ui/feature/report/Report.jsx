@@ -10,7 +10,7 @@ import axios from "axios";
 import Category from "../../components/category/Category";
 import {httpClient} from "../../../data/service/HttpClient";
 
-export default function Report({callback, category, cctv, imgRef}) {
+export default function Report({callback, category, cctv, img}) {
 
   const [content, setContent] = useState('');
   const [imgUrl, setImgUrl] = useState('');
@@ -18,12 +18,10 @@ export default function Report({callback, category, cctv, imgRef}) {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const img = imgRef.current;
     const canvas = document.createElement('canvas');
     const context = canvas.getContext('2d');
 
     console.log(img.width, img.height);
-    console.log(img);
 
     canvas.width = img.width * 1.6;
     canvas.height = img.height * 1.6;

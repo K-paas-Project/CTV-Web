@@ -4,7 +4,6 @@ import {
   InfoContainer,
   LeftContent,
   MainContent,
-  MainVideo,
   RecommendControlContainer,
   RightContent, CategoryContent, LiveContent, Live
 } from "./HomeStyle";
@@ -16,7 +15,7 @@ import IcDownArrow from '../../../asset/ic_down_arrow.svg';
 import CTVIcon from "../../components/icon/Icon";
 import Recommend from "./component/Recommend";
 import Modal from "../../components/modal/Modal";
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import Report from "../report/Report";
 import Category from "../../components/category/Category";
 
@@ -63,7 +62,7 @@ export default function Home() {
     <Container>
       <LeftContent>
         <MainContent>
-          <Img src={clickedContent.url} alt="" ref={imgRef}/>
+          <Img src={clickedContent.url} alt="" ref={imgRef} loading={"lazy"}/>
           <CategoryContent>
             <Category type={clickedContent.location === fire.location ? '산불' : '안전'}/>
           </CategoryContent>
@@ -72,7 +71,6 @@ export default function Home() {
               <C2VText text={'실시간'} type={'body'} color={Color.white}/>
               <div style={{width: '10px'}}></div>
               <CTVIcon src={IcLive} width={12} height={12}/>
-
             </Live>
           </LiveContent>
         </MainContent>
@@ -103,7 +101,7 @@ export default function Home() {
         {lst.map((i, idx) => (<Recommend key={idx} type={i.location === fire.location ? '산불' : '안전'} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
-        <Report callback={() => setIsReportOpen(false)} cctv={clickedContent.cctv} category={'산불'} imgRef={imgRef}/>
+        <Report callback={() => setIsReportOpen(false)} cctv={clickedContent.cctv} category={'산불'} img={imgRef.current}/>
       </Modal>
     </Container>
   );

@@ -7,7 +7,7 @@ export default function Recommend({model, callback, type}) {
 
   return (
     <Container onClick={() => callback()}>
-      <Video src={model.url}/>
+      <Video src={model.url} loading={"lazy"}/>
       {type ? <CategoryContent>
         <Category type={type}/>
       </CategoryContent> : null}
