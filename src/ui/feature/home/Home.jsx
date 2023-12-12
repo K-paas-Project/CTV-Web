@@ -65,7 +65,7 @@ export default function Home() {
         <MainContent>
           <Img src={clickedContent.url} alt="" ref={imgRef}/>
           <CategoryContent>
-            <Category type={clickedContent === fire ? '산불' : '안전'}/>
+            <Category type={clickedContent.location === fire.location ? '산불' : '안전'}/>
           </CategoryContent>
           <LiveContent>
             <C2VText text={'실시간'} type={'body'} color={Color.white}/>
@@ -78,7 +78,7 @@ export default function Home() {
             <C2VText text={clickedContent.location} type={'title'}/>
             <C2VText text={clickedContent.cctv} type={'body'}/>
           </Info>
-          {clickedContent === fire ? <CTVButton onClick={() => setIsReportOpen(true)} type={'red'}>
+          {clickedContent.location === fire.location ? <CTVButton onClick={() => setIsReportOpen(true)} type={'red'}>
             <C2VText text={'신고하기'} color={Color.white}/>
           </CTVButton> : null}
         </InfoContainer>
@@ -97,7 +97,7 @@ export default function Home() {
           </CTVButton>
         </RecommendControlContainer>
         <div style={{height: '16px'}}></div>
-        {lst.map(i => (<Recommend type={i == fire ? '산불' : '안전'} callback={() => setClickedContent(i)} model={i}/>))}
+        {lst.map((i, idx) => (<Recommend key={idx} type={i.location === fire.location ? '산불' : '안전'} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
         <Report callback={() => setIsReportOpen(false)} category={'산불'} imgRef={imgRef}/>
