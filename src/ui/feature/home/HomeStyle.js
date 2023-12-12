@@ -50,6 +50,11 @@ export const LiveContent = styled.div`
   padding: 20px;
 `
 
+export const Live = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const Img = styled.img`
   position: relative;
   width: 65vw;

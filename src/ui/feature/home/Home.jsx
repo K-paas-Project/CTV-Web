@@ -6,7 +6,7 @@ import {
   MainContent,
   MainVideo,
   RecommendControlContainer,
-  RightContent, CategoryContent, LiveContent
+  RightContent, CategoryContent, LiveContent, Live
 } from "./HomeStyle";
 import C2VText from "../../components/text/Text";
 import CTVButton from "../../components/button/Button";
@@ -68,9 +68,12 @@ export default function Home() {
             <Category type={clickedContent.location === fire.location ? '산불' : '안전'}/>
           </CategoryContent>
           <LiveContent>
-            <C2VText text={'실시간'} type={'body'} color={Color.white}/>
-            <div style={{width: '10px'}}></div>
-            <CTVIcon src={IcLive} width={12} height={12}/>
+            <Live>
+              <C2VText text={'실시간'} type={'body'} color={Color.white}/>
+              <div style={{width: '10px'}}></div>
+              <CTVIcon src={IcLive} width={12} height={12}/>
+
+            </Live>
           </LiveContent>
         </MainContent>
         <InfoContainer>
