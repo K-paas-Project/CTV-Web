@@ -78,9 +78,9 @@ export default function Home() {
             <C2VText text={clickedContent.location} type={'title'}/>
             <C2VText text={clickedContent.cctv} type={'body'}/>
           </Info>
-          <CTVButton onClick={() => setIsReportOpen(true)} type={'red'}>
+          {clickedContent === fire ? <CTVButton onClick={() => setIsReportOpen(true)} type={'red'}>
             <C2VText text={'신고하기'} color={Color.white}/>
-          </CTVButton>
+          </CTVButton> : null}
         </InfoContainer>
       </LeftContent>
       <RightContent>
@@ -97,7 +97,7 @@ export default function Home() {
           </CTVButton>
         </RecommendControlContainer>
         <div style={{height: '16px'}}></div>
-        {lst.map(i => (<Recommend type={i == fire ? '산불' : null} callback={() => setClickedContent(i)} model={i}/>))}
+        {lst.map(i => (<Recommend type={i == fire ? '산불' : '안전'} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
         <Report callback={() => setIsReportOpen(false)} category={'산불'} imgRef={imgRef}/>

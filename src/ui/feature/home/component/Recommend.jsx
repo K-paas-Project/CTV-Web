@@ -9,7 +9,7 @@ export default function Recommend({model, callback, type}) {
     <Container onClick={() => callback()}>
       <Video src={model.url}/>
       {type ? <CategoryContent>
-        <Category type={'산불'}/>
+        <Category type={type}/>
       </CategoryContent> : null}
       <InfoContent>
         <C2VText text={model.location} type={'body'}/>
