@@ -64,9 +64,9 @@ export default function Home() {
       <LeftContent>
         <MainContent>
           <Img src={clickedContent.url} alt="" ref={imgRef}/>
-          {clickedContent === fire ? <CategoryContent>
-            <Category type={'산불'}/>
-          </CategoryContent> : null}
+          <CategoryContent>
+            <Category type={clickedContent === fire ? '산불' : '안전'}/>
+          </CategoryContent>
           <LiveContent>
             <C2VText text={'실시간'} type={'body'} color={Color.white}/>
             <div style={{width: '10px'}}></div>
