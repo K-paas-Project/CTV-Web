@@ -17,7 +17,6 @@ httpClient.interceptors.request.use(
 
     if (config.url === '/api/v1/join'
       || config.url === '/api/v1/login'
-      || config.url === '/api/v1/report'
       || config.url === '/api/v1/refresh') {
       console.log(`interceptor - passed-url: ${config.url}`);
       return config;
