@@ -12,6 +12,7 @@ import {httpClient} from "../../../data/service/HttpClient";
 
 export default function Report({callback, category, cctv, img}) {
 
+  const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [imgUrl, setImgUrl] = useState('');
   const [blob, setBlob] = useState();
@@ -70,6 +71,12 @@ export default function Report({callback, category, cctv, img}) {
         </Info>
       </InfoContent>
       <InputContent>
+        <C2VText text={'제목'} type={'body'} weight={700}/>
+        <div style={{height: '4px'}}></div>
+        <CTVInput placeholder={'제목 입력하세요'} height={110} value={title}
+                  onChange={(i) => setTitle(i.target.value)}/>
+      </InputContent>
+      <InputContent>
         <C2VText text={'내용'} type={'body'} weight={700}/>
         <div style={{height: '4px'}}></div>
         <CTVInputArea placeholder={'내용을 입력하세요'} height={110} value={content}
@@ -78,7 +85,7 @@ export default function Report({callback, category, cctv, img}) {
       <ButtonContainer>
         <CTVButton isLoading={isLoading} type={'red'} onClick={() => {
           setIsLoading(true);
-          report(category, '제목', content, '대구 어딘가', blob)
+          report(category, title, content, '대구 어딘가', blob)
             .then(res => {
               setIsLoading(false);
               callback();
