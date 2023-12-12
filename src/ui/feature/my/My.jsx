@@ -4,6 +4,9 @@ import {getProfile} from "../../../data/service/api/AuthApi";
 import C2VText from "../../components/text/Text";
 import {useNavigate} from "react-router-dom";
 import {Url} from "../root/App";
+import CTVButton from "../../components/button/Button";
+import Color from "../../components/theme/color/Color";
+import {LocalKeys} from "../../../data/local/LocalClient";
 
 export default function My() {
 
@@ -49,6 +52,14 @@ export default function My() {
           <C2VText text={organization} type={'headline'} weight={'normal'}/>
         </Content>
       </Info>
+      <div style={{height:'16px'}}></div>
+      <CTVButton type={'red'} onClick={() => {
+        localStorage.setItem(LocalKeys.accessToken, '');
+        localStorage.setItem(LocalKeys.refreshToken, '');
+        navigate(Url.homeUrl);
+      }}>
+        <C2VText text={'로그아웃'} color={Color.white}/>
+      </CTVButton>
     </Container>
   );
 }
