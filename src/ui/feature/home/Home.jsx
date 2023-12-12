@@ -75,8 +75,8 @@ export default function Home() {
         </MainContent>
         <InfoContainer>
           <Info>
-            <C2VText text={'dummy title'} type={'title'}/>
-            <C2VText text={'dummy body'} type={'body'}/>
+            <C2VText text={clickedContent.location} type={'title'}/>
+            <C2VText text={clickedContent.cctv} type={'body'}/>
           </Info>
           <CTVButton onClick={() => setIsReportOpen(true)} type={'red'}>
             <C2VText text={'신고하기'} color={Color.white}/>
