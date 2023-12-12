@@ -24,3 +24,8 @@ export const DownContent = styled.div`
   display: flex;
   flex-direction: column;
 `
+
+export const CategoryContent = styled.div`
+  display: flex;
+  justify-content: start;
+`
