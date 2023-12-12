@@ -10,7 +10,7 @@ import axios from "axios";
 import Category from "../../components/category/Category";
 import {httpClient} from "../../../data/service/HttpClient";
 
-export default function Report({callback, category, cctv, img}) {
+export default function Report({callback, location, category, cctv, img}) {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -85,7 +85,7 @@ export default function Report({callback, category, cctv, img}) {
       <ButtonContainer>
         <CTVButton isLoading={isLoading} type={'red'} onClick={() => {
           setIsLoading(true);
-          report(category, title, content, '대구 어딘가', blob)
+          report(category, title, content, location, blob)
             .then(res => {
               setIsLoading(false);
               callback();
@@ -93,7 +93,7 @@ export default function Report({callback, category, cctv, img}) {
             })
             .catch(e => {
               setIsLoading(false);
-              console.log(e)
+              console.log(e);
             });
         }}>
           <C2VText text={'신고 완료'} type={'label'} color={Color.white}/>
