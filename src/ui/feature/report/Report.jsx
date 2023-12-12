@@ -10,7 +10,7 @@ import axios from "axios";
 import Category from "../../components/category/Category";
 import {httpClient} from "../../../data/service/HttpClient";
 
-export default function Report({callback, category, imgRef}) {
+export default function Report({callback, category, cctv, imgRef}) {
 
   const [content, setContent] = useState('');
   const [imgUrl, setImgUrl] = useState('');
@@ -42,6 +42,13 @@ export default function Report({callback, category, imgRef}) {
     }
   }, []);
 
+  const [currentTime, setCurrentTime] = useState('');
+
+  useEffect(() => {
+    const time = new Date();
+    setCurrentTime(`${time.getFullYear()}-${time.getMonth()}-${time.getDay()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`);
+  }, []);
+
 
   return (
     <Container>
@@ -57,11 +64,11 @@ export default function Report({callback, category, imgRef}) {
         </Info>
         <Info>
           <C2VText text={'위치'} type={'body'} weight={700}/>
-          <C2VText text={'dummy'} type={'label'} color={Color.gray3}/>
+          <C2VText text={cctv} type={'label'} color={Color.gray3}/>
         </Info>
         <Info>
           <C2VText text={'발생 시간'} type={'body'} weight={700}/>
-          <C2VText text={'dummy'} type={'label'} color={Color.gray3}/>
+          <C2VText text={currentTime} type={'label'} color={Color.gray3}/>
         </Info>
       </InfoContent>
       <InputContent>

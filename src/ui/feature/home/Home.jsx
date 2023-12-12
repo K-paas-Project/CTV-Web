@@ -100,7 +100,7 @@ export default function Home() {
         {lst.map((i, idx) => (<Recommend key={idx} type={i.location === fire.location ? '산불' : '안전'} callback={() => setClickedContent(i)} model={i}/>))}
       </RightContent>
       <Modal isOpen={isReportOpen} setIsOpen={() => setIsReportOpen(false)}>
-        <Report callback={() => setIsReportOpen(false)} category={'산불'} imgRef={imgRef}/>
+        <Report callback={() => setIsReportOpen(false)} cctv={clickedContent.cctv} category={'산불'} imgRef={imgRef}/>
       </Modal>
     </Container>
   );
