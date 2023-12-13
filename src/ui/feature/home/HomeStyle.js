@@ -80,3 +80,15 @@ export const RecommendContainer = styled.div`
   display: flex;
 `
 
+export const Map = styled.iframe`
+  border: none;
+  border-radius: 16px;
+  width: 100%;
+  height: 26rem;
+`
+
+export const MapContent = styled.div`
+  border-radius: 16px;
+  box-shadow: 2px 2px 8px 0 #eee;
+  margin-top: 16px;
+`
