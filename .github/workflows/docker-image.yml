@@ -57,5 +57,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/ctvweb
-            docker stop ctvweb
+            docker stop ctvweb || true
+            docker rm ctvweb || true 
             docker run -d --rm --name ctvweb -p 3000:3000 ${{ secrets.DOCKERHUB_USERNAME }}/ctvweb
